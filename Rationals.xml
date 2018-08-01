@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rationals</name>
+    </assembly>
+    <members>
+        <member name="M:Rationals.Rational.Approximate(System.Decimal,System.Decimal)">
+            <summary>
+            Approximates given decimal number as a rational number. If a higher tolerance is given, simpler decimal might be returned.
+            </summary>
+            <param name="input">Input decimal</param>
+            <param name="tolerance">Optional tolerance</param>
+            <returns>Output rational</returns>
+        </member>
+        <member name="M:Rationals.Rational.Approximate(System.Double,System.Double)">
+            <summary>
+            Approximates given double number as a rational number. If a higher tolerance is given, simpler double might be returned.
+            </summary>
+            <param name="input">Input double</param>
+            <param name="tolerance">Optional tolerance</param>
+            <returns>Output rational</returns>
+        </member>
+        <member name="M:Rationals.Rational.Approximate(System.Single,System.Single)">
+            <summary>
+            Approximates given float number as a rational number. If a higher tolerance is given, simpler float might be returned.
+            </summary>
+            <param name="input">Input float</param>
+            <param name="tolerance">Optional tolerance</param>
+            <returns>Output rational</returns>
+        </member>
+        <member name="P:Rationals.Rational.CanonicalForm">
+            <summary>
+            Cannonical form is irreducible fraction where denominator is always positive.
+            </summary>
+            <remarks>Canonical form of zero is 0/1.</remarks>
+        </member>
+        <member name="M:Rationals.Rational.ToContinuedFraction">
+            <summary>
+            Expands rational number to continued fraction coefficients.
+            <seealso cref="M:Rationals.Rational.FromContinuedFraction(System.Collections.Generic.IEnumerable{System.Numerics.BigInteger})" />
+            </summary>
+            <returns>Output sequence of continued fraction coefficients</returns>
+        </member>
+        <member name="M:Rationals.Rational.FromContinuedFraction(System.Collections.Generic.IEnumerable{System.Numerics.BigInteger})">
+            <summary>
+            Constructs rational number from sequence of continued fraction coefficients.
+            <seealso cref="M:Rationals.Rational.ToContinuedFraction" />
+            </summary>
+            <param name="continuedFraction">Input sequence of continued fraction coefficients</param>
+            <returns>Output rational number</returns>
+        </member>
+        <member name="P:Rationals.Rational.IsZero">
+            <summary>
+            True if the number is equal to zero.
+            </summary>
+        </member>
+        <member name="P:Rationals.Rational.IsOne">
+            <summary>
+            True if the number is equal to one.
+            </summary>
+        </member>
+        <member name="P:Rationals.Rational.Sign">
+            <summary>
+            Gets a number that indicates the sign (negative, positive, or zero) of the rational number.
+            </summary>
+        </member>
+        <member name="P:Rationals.Rational.IsPowerOfTwo">
+            <summary>
+            Indicates whether the value of the rational number is a power of two.
+            </summary>
+        </member>
+        <member name="P:Rationals.Rational.Magnitude">
+            <summary>
+            Represents the exponent of 10 if the number was written in scientific notation.
+            </summary>
+            <example>
+            Magnitude of 0 is 0.<br />
+            Magnitude of 5 is 0.<br />
+            Magnitude of 12 is 1.<br />
+            Magnitude of 3 988 222 is 6.<br />
+            Magnitude of 0.2223 is -1.<br />
+            Magnitude of 0.04 is -2.<br />
+            </example>
+        </member>
+        <member name="P:Rationals.Rational.Digits">
+            <summary>
+            Enumerates significant digits of the rational number.
+            Omits leading and trailing zeros (only exception is number zero).
+            </summary>
+            <remarks>
+            To see the right magnitude, see <seealso cref="P:Rationals.Rational.Magnitude" /> (e.g. for writing in scientific notation).
+            </remarks>
+        </member>
+        <member name="M:Rationals.Rational.ToString(System.String,System.IFormatProvider)">
+            <summary>
+            Formats rational number to string
+            </summary>
+            <param name="format">F for normal fraction, C for canonical fraction, W for whole+fractional</param>
+            <param name="formatProvider">Ignored, custom format providers are not supported</param>
+        </member>
+        <member name="M:Rationals.Rational.ToString(System.String)">
+            <summary>
+            Formats rational number to string
+            </summary>
+            <param name="format">F for normal fraction, C for canonical fraction, W for whole+fractional</param>
+        </member>
+        <member name="M:Rationals.Rational.Invert(Rationals.Rational)">
+            <summary>
+            Multiplicative inverse of the rational number.
+            </summary>
+        </member>
+        <member name="M:Rationals.Rational.Negate(Rationals.Rational)">
+            <summary>
+            Additive inverse of the rational number.
+            </summary>
+        </member>
+        <member name="M:Rationals.Rational.Add(Rationals.Rational,Rationals.Rational)">
+            <summary>
+            Returns the sum of the two numbers.
+            </summary>
+        </member>
+        <member name="M:Rationals.Rational.Subtract(Rationals.Rational,Rationals.Rational)">
+            <summary>
+            Subtracts one number from another and returns result.
+            </summary>
+        </member>
+        <member name="M:Rationals.Rational.Multiply(Rationals.Rational,Rationals.Rational)">
+            <summary>
+            Returns product of the two numbers.
+            </summary>
+        </member>
+        <member name="M:Rationals.Rational.Divide(Rationals.Rational,Rationals.Rational)">
+            <summary>
+            Divides one number by another and returns result.
+            </summary>
+        </member>
+        <member name="M:Rationals.Rational.Pow(Rationals.Rational,System.Int32)">
+            <summary>
+            Exponentiation of the rational number to the given integer exponent.
+            </summary>
+        </member>
+        <member name="M:Rationals.Rational.Abs(Rationals.Rational)">
+            <summary>
+            Gets the absolute value of the rational number.
+            </summary>
+        </member>
+        <member name="M:Rationals.Rational.Log10(Rationals.Rational)">
+            <summary>
+            Returns the base 10 logarithm of a rational number.
+            </summary>
+        </member>
+        <member name="M:Rationals.Rational.Log(Rationals.Rational)">
+            <summary>
+            Returns the natural (base e) logarithm of a rational number.
+            </summary>
+        </member>
+        <member name="M:Rationals.Rational.Log(Rationals.Rational,System.Double)">
+            <summary>
+            Returns the logarithm of a rational number.
+            </summary>
+        </member>
+        <member name="M:Rationals.Rational.Root(Rationals.Rational,System.Double)">
+            <summary>
+            Root of the rational number as double.
+            </summary>
+        </member>
+        <member name="M:Rationals.Rational.RationalRoot(Rationals.Rational,System.Int32)">
+            <summary>
+            Root of the rational number to the given integer radix (experimental).
+            </summary>
+        </member>
+        <member name="P:Rationals.Rational.WholePart">
+            <summary>
+            Whole part of the rational number, see also <seealso cref="P:Rationals.Rational.FractionPart" />.
+            </summary>
+            <example>
+            4/3 = 1 + 1/3;
+            -10/4 = -3 + 2/4
+            </example>
+        </member>
+        <member name="P:Rationals.Rational.FractionPart">
+            <summary>
+            Fractional part of the rational number, see also <seealso cref="P:Rationals.Rational.WholePart" />.
+            </summary>
+            <example>
+            4/3 = 1 + 1/3;
+            -10/4 = -3 + 2/4
+            </example>
+        </member>
+    </members>
+</doc>
